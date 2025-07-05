@@ -11,6 +11,31 @@ fn main() {
 
     // arithmetic operators
     println!("==============airthmetic operator==================");
+    airthemtical_operator();
+
+    // assignment operator
+    println!("===============assignment operator================");
+    assignment_operator();
+
+    println!("=============comparison operator=================");
+    comparison_operator();
+
+    println!("=============logical operator==============");
+    logical_operator();
+
+    println!("==============Conditional if ================");
+    conditional_if();
+
+    println!("==============Conditional switch ================");
+    conditional_match();
+
+    println!("=================Looping==================");
+    forever_loop();
+    while_loop();
+    for_loop(6);
+}
+
+fn airthemtical_operator() {
     let num1 = 10;
     let num2 = 20;
 
@@ -19,9 +44,9 @@ fn main() {
     println!("Multiply {}", num2 * num1);
     println!("Divide {}", num2 / num1);
     println!("Modulo {}", num2 % num1);
+}
 
-    // assignment operator
-    println!("===============assignment operator================");
+fn assignment_operator() {
     let mut ass_num = 1;
     ass_num += 5;
     println!("Addition {}", ass_num);
@@ -37,8 +62,9 @@ fn main() {
 
     ass_num %= 3;
     println!("Modulo {}", ass_num);
+}
 
-    println!("=============comparison operator=================");
+fn comparison_operator() {
     let a = 5;
     let b = 10;
 
@@ -46,16 +72,18 @@ fn main() {
     println!("5 != 10: {}", a != b);
     println!("5 < 10: {}", a < b);
     println!("5 >= 10: {}", a >= b);
+}
 
-    println!("=============logical operator==============");
+fn logical_operator() {
     let logged_in = true;
     let is_admin = false;
 
     println!("Is regular user: {}", logged_in && !is_admin);
     println!("Has any access: {}", logged_in || is_admin);
     println!("Not logged in: {}", !logged_in);
+}
 
-    println!("==============Conditional if ================");
+fn conditional_if() {
     if true {
         println!("Will always execute");
     }
@@ -81,8 +109,8 @@ fn main() {
     } else {
         println!("never execute");
     }
-
-    println!("==============Conditional switch ================");
+}
+fn conditional_match() {
     // switch case
     let num = 3;
     match num {
@@ -109,8 +137,9 @@ fn main() {
         3 | 4 => println!("Number 3 | 4"),
         _ => println!("default case"),
     };
+}
 
-    println!("=================Looping==================");
+fn forever_loop() {
     let mut count = 0;
 
     // will run forever if not used break
@@ -136,19 +165,24 @@ fn main() {
     }; // semicolon is necessary for expression
 
     // println!("final result {}", result) // not sure it is not working
+}
 
+fn while_loop() {
+    let mut count = 0;
     // while loop till the condition is true
     while count <= 10 {
         println!("while loop count {}", count);
         count += 1;
     }
+}
 
+fn for_loop(till: i32) {
     // for loop when you know exact value of iteration
-    for i in 1..6 {
+    for i in 1..till {
         println!("for loop {}", i)
     }
 
-    for i in 1..=6 {
+    for i in 1..=till {
         println!("for loop inclusive {}", i)
     }
 }
