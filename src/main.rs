@@ -33,6 +33,9 @@ fn main() {
     forever_loop();
     while_loop();
     for_loop(6);
+
+    println!("========Different ways to store String===========");
+    changeable_string();
 }
 
 fn airthemtical_operator() {
@@ -185,4 +188,17 @@ fn for_loop(till: i32) {
     for i in 1..=till {
         println!("for loop inclusive {}", i)
     }
+}
+
+fn changeable_string() {
+    let s1: &str = "Hello"; // this is string slice
+    let mut s2 = String::from("World"); // this is changeable string
+    let s3 = format!("{} {}", s1, s2); // interpolate string, can also use + operator for same
+    println!("String Formatting {} length of string {}", s3, s3.len());
+
+    s2.push_str("people");
+    println!("{}", s2);
+
+    s2.push('A'); // single character
+    println!("{}", s2);
 }
