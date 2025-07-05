@@ -36,6 +36,9 @@ fn main() {
 
     println!("========Different ways to store String===========");
     changeable_string();
+
+    println!("=======Onwership and borrowing=======");
+    ownership_borrowing();
 }
 
 fn airthemtical_operator() {
@@ -201,4 +204,25 @@ fn changeable_string() {
 
     s2.push('A'); // single character
     println!("{}", s2);
+}
+
+fn ownership_borrowing() {
+    let a = 10; //ownership
+    let b = a; // b become the owner of 10 and a still remain
+    println!("b value {}", b);
+
+    let s1 = String::from("Hello");
+    let s2 = s1; // s2 become the owner and s1 no longer exist
+    // println!("{}", s1); // error s1 moved
+    let s3 = s2.clone(); // s3 is the owner of "Hello", and s2 also exist
+    println!("{} {}", s2, s3);
+
+    // borrowing
+    let mut s4 = String::from("Hello");
+    let s5 = &s4; // this is borrowing
+
+    println!("borrowing {}", s5);
+    let s6 = &mut s4;
+    s6.push_str(" updating world");
+    println!("{}", s6);
 }
