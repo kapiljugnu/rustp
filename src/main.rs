@@ -54,4 +54,59 @@ fn main() {
     println!("Is regular user: {}", logged_in && !is_admin);
     println!("Has any access: {}", logged_in || is_admin);
     println!("Not logged in: {}", !logged_in);
+
+    println!("==============Conditional if ================");
+    if true {
+        println!("Will always execute");
+    }
+
+    if 6 == 7 {
+        println!("never execute");
+    } else {
+        println!("else execute")
+    }
+
+    // unary expression in other language
+    let message = if true {
+        "if as expression "
+    } else {
+        "always require else"
+    };
+    println!("{}", message);
+
+    if 6 == 7 {
+        println!("never execute");
+    } else if 6 == 6 {
+        println!("will execute");
+    } else {
+        println!("never execute");
+    }
+
+    println!("==============Conditional switch ================");
+    // switch case
+    let num = 3;
+    match num {
+        1 => println!("Number 1"),
+        2 => println!("Number 2"),
+        3 => println!("Number 3"),
+        _ => println!("default case"),
+    };
+
+    // switch case expression
+    let switch_message = match num {
+        1 => "Number 1",
+        2 => "Number 2",
+        3 => "Number 3",
+        _ => "Default case",
+    };
+
+    println!("switch case expression :: {}", switch_message);
+
+    println!("Multiple matches");
+    //multiple case
+    match num {
+        1 | 2 => println!("Number 1 | 2"),
+        3 | 4 => println!("Number 3 | 4"),
+        _ => println!("default case"),
+    };
 }
