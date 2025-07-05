@@ -109,4 +109,46 @@ fn main() {
         3 | 4 => println!("Number 3 | 4"),
         _ => println!("default case"),
     };
+
+    println!("=================Looping==================");
+    let mut count = 0;
+
+    // will run forever if not used break
+    loop {
+        println!("loop number {}", count);
+
+        if count == 3 {
+            break;
+        }
+
+        count += 1;
+    }
+
+    // loop as expression
+    let _result = loop {
+        println!("loop number {}", count);
+
+        if count == 6 {
+            break;
+        }
+
+        count += 1;
+    }; // semicolon is necessary for expression
+
+    // println!("final result {}", result) // not sure it is not working
+
+    // while loop till the condition is true
+    while count <= 10 {
+        println!("while loop count {}", count);
+        count += 1;
+    }
+
+    // for loop when you know exact value of iteration
+    for i in 1..6 {
+        println!("for loop {}", i)
+    }
+
+    for i in 1..=6 {
+        println!("for loop inclusive {}", i)
+    }
 }
