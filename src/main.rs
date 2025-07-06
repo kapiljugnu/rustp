@@ -45,6 +45,9 @@ fn main() {
 
     println!("========Vector===========");
     dynamic_array_aka_vector();
+
+    println!("=========Tuple===========");
+    tuple();
 }
 
 fn airthemtical_operator() {
@@ -276,4 +279,12 @@ fn dynamic_array_aka_vector() {
     // }
 
     // println!("{:?}", arr1);
+}
+
+fn tuple() {
+    let t = ("tuple", 1, true); //packing
+    let (s, n, b) = t; //unpacking
+    println!("{} {} {}", s, n, b);
+
+    println!("{}", t.0);
 }
