@@ -39,6 +39,12 @@ fn main() {
 
     println!("=======Onwership and borrowing=======");
     ownership_borrowing();
+
+    println!("=========fixed array========");
+    fixed_array();
+
+    println!("========Vector===========");
+    dynamic_array_aka_vector();
 }
 
 fn airthemtical_operator() {
@@ -225,4 +231,49 @@ fn ownership_borrowing() {
     let s6 = &mut s4;
     s6.push_str(" updating world");
     println!("{}", s6);
+}
+
+fn fixed_array() {
+    let arr1 = [1, 2, 3];
+    println!("{}", arr1[1]); // access single element
+    println!("{:?}", arr1); // print complete array , see the placeholder diff
+
+    // arr1.push(4); // error because fixed size array, method not found in `[]`
+    // arr1[1] = 4; // error , cannot mutable immutable array
+    //
+    let mut arr2 = [1, 2, 3];
+    arr2[0] = 4;
+    println!("{:?}", arr2);
+
+    for item in arr2 {
+        println!("Item {}", item);
+    }
+}
+
+fn dynamic_array_aka_vector() {
+    let mut arr1 = vec![1, 2, 3];
+    println!("{:?}", arr1);
+    arr1.push(4);
+    println!("{:?}", arr1);
+
+    for item in &arr1 {
+        // borrowed vector
+        println!("Item {}", item);
+    }
+
+    arr1.insert(arr1.len(), 7);
+    println!("{:?}", arr1);
+
+    arr1.remove(arr1.len() - 1);
+    println!("{:?}", arr1);
+
+    arr1.pop(); // rmeove the last element
+    println!("{:?}", arr1);
+
+    // error because arr1 is moved
+    // for item in arr1 {
+    //     println!("Item {}", item);
+    // }
+
+    // println!("{:?}", arr1);
 }
